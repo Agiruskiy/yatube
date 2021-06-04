@@ -1,2 +1,2 @@
 # yatube
-social media
+social media project
