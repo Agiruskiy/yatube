@@ -1,11 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-{% post %}
-
-</body>
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Последние обновления | Yatube</title>
+    </head>
+    <body>
+        <h1>Последние обновления на сайте</h1>
+        {% for posts in post %}
+        <h3>
+                Автор: {{ posts.author.get_full_name }}, дата публикации: {{ posts.pub_date|date:"d M Y" }}
+        </h3>
+        <p>{{ posts.text|linebreaksbr }}</p>
+        <hr>
+        {% endfor %}
+    </body>
 </html>
