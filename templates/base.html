@@ -8,19 +8,30 @@
     <!-- Загрузка статики -->
     {% load static %}
     <link rel="stylesheet" href="{% static 'bootstrap/dist/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed">
+    <link rel="stylesheet" href="{% static "css/styles.css" %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic">
+    <link rel="stylesheet" href="{% static 'fonts/font-awesome.min.css' %}">
     <script src="{% static 'jquery/dist/jquery.min.js' %}"></script>
     <script src="{% static 'bootstrap/dist/js/bootstrap.min.js' %}"></script>
 </head>
 
 <body>
-    {% include 'nav.html' %}
+    {% include 'navbar.html' %}
     <main>
-        <div class="container">
-            <h1>{% block header %}The Last Social Media You'll Ever Need{% endblock %}</h1>
+    <div class="pt-4 container text-center masthead">
+        <div class="overlay">
+            <div class="col-xl-9 mx-auto">
+                {% block header %}<h1 class="mb-5" style="font-size: 30px;">The Last Social Media You'll Ever Need</h1>{% endblock %}
+            </div>
+        </div>
+    </div>
+    <script src="{% static '/js/jquery.min.js' %}"></script>
+    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+
             {% block content %}
             <!-- Содержимое страницы -->
             {% endblock %}
-        </div>
     </main>
     {% include 'footer.html' %}
 </body>

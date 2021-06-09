@@ -30,10 +30,13 @@ ALLOWED_HOSTS = ['192.168.0.62']
 
 
 # Application definition
+SITE_ID = 1
 
 INSTALLED_APPS = [
     'users',
     'posts',
+    'django.contrib.sites',
+    'django.contrib.flatpages',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
